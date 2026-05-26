@@ -43,19 +43,21 @@ python leetcode_crawler_v2.py
 3. **排序方式** - 1=最新，2=最热
 4. **评论数量** - 默认100条
 
-**输出**：评论会保存到 `leetcode_comments_output/{题目slug}.txt`
+**输出**：评论会保存到 `leetcode_comments_output/{题目slug}.txt`，当前文件中是已经爬取的按照最新排序的前100个用户的评论（2026.05.25）
 
 **已爬取的问题会自动跳过**，再次运行不会重复爬取。
 
 ### 2. 离线搜索脚本 (run_search.py)
 
-已内置关键词的搜索脚本，适合快速重复搜索：
+已内置关键词的搜索脚本，可快速从`leetcode_comments_output`中搜索：
 ```bash
 python run_search.py
 ```
 程序会询问搜索关键词，用逗号隔开
 
 默认搜索关键词：`['字节', 'tiktok', '抖音', 'bytedance', '宇宙厂']`
+
+最后搜索结果会写入一个txt文件中，并按照命中评论数进行降序排序，如`search_results.txt`
 
 ## 评论文件格式
 
